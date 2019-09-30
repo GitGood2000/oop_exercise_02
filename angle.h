@@ -29,4 +29,7 @@ public:
   int operator>(const Angle& o);
 };
 
+int operator "" _deg (unsigned long long deg);
+int operator "" _min (unsigned long long min);
+
 #endif

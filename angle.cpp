@@ -3,6 +3,14 @@
 
 #include <iostream>
 
+int operator "" _deg (unsigned long long deg){
+  return (deg / 60) % 360;
+}
+
+int operator "" _min (unsigned long long min){
+  return min % 60;
+}
+
 void Angle::read(std::istream& is) {
   is >> deg >> min;
 }

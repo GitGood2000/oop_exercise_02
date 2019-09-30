@@ -8,6 +8,8 @@ int main(){
   //std::cout << "Enter numbers:\n[degrees] and [minutes] (-59...59)" << std::endl;
   a.read(std::cin);
   b.read(std::cin);
+  std::cout << "20593 minutes is:\n";
+  std::cout << 20593_deg << " " << 20593_min << std::endl;
   std::cout << "RADS:\n";
   std::cout << a.deg_to_rad() << std::endl;
   std::cout << "0-360 DEG:\n";
