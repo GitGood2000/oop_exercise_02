@@ -3,12 +3,22 @@
 
 #include <iostream>
 
-int operator "" _deg (unsigned long long deg){
-  return (deg / 60) % 360;
+Angle::Angle()
+  : deg(0)
+  , min(0) {}
+
+Angle::Angle(int d, int m)
+  : deg(d)
+  , min(m) {}
+
+Angle operator "" _deg (unsigned long long deg){
+  Angle a(deg, 0);
+  return a;
 }
 
-int operator "" _min (unsigned long long min){
-  return min % 60;
+Angle operator "" _min (unsigned long long min){
+  Angle a(0, min);
+  return a;
 }
 
 void Angle::read(std::istream& is) {
@@ -101,4 +111,14 @@ int Angle::operator>(const Angle& rhs) {
     }
   }
   return result;
+}
+
+std::istream& operator >> (std::istream& is, Angle& a){
+  a.read(is);
+  return is;
+}
+
+std::ostream& operator << (std::ostream& os, const Angle& a){
+  a.awrite(os);
+  return os;
 }
